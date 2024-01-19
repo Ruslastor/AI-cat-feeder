@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdyu2pftsied5"]
+
+[ext_resource type="Script" path="res://menues/cat_adder.gd" id="1_lgi6y"]
+[ext_resource type="Script" path="res://objects/movable.gd" id="2_5kd5g"]
+[ext_resource type="Texture2D" uid="uid://drgqwb7arvc3m" path="res://assets/button.png" id="3_cftvj"]
+[ext_resource type="Texture2D" uid="uid://dahiheqx8p60i" path="res://huh.jpg" id="4_gyliq"]
+[ext_resource type="Theme" uid="uid://bhsf4m15q7ug3" path="res://design.theme" id="5_uk1c0"]
+[ext_resource type="FontFile" uid="uid://c7ig0yeixifcr" path="res://fonts/Roboto-Black.ttf" id="6_f3mj3"]
+[ext_resource type="Texture2D" uid="uid://c1nbe6ultje0s" path="res://assets/chack_on.png" id="7_qvuk5"]
+[ext_resource type="Texture2D" uid="uid://dv3tljjnunboy" path="res://assets/check_off.png" id="8_wylli"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0kt0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhwe6"]
+
+[node name="CatAdder" type="PanelContainer"]
+custom_minimum_size = Vector2(1080, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b0kt0")
+script = ExtResource("1_lgi6y")
+
+[node name="__" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="_" type="PanelContainer" parent="__"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xhwe6")
+
+[node name="_header" type="Label" parent="__"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.443137, 0.443137, 0.443137, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.803922, 0.803922, 0.803922, 1)
+theme_override_fonts/font = ExtResource("6_f3mj3")
+theme_override_font_sizes/font_size = 100
+text = "New cat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="___2" type="PanelContainer" parent="__"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xhwe6")
+
+[node name="name" type="LineEdit" parent="__"]
+custom_minimum_size = Vector2(916, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_uk1c0")
+theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_colors/font_placeholder_color = Color(0.85098, 0.85098, 0.85098, 1)
+theme_override_fonts/font = ExtResource("6_f3mj3")
+theme_override_font_sizes/font_size = 70
+placeholder_text = "    Cat Name"
+
+[node name="weight" type="LineEdit" parent="__"]
+custom_minimum_size = Vector2(916, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_uk1c0")
+theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_colors/font_placeholder_color = Color(0.85098, 0.85098, 0.85098, 1)
+theme_override_fonts/font = ExtResource("6_f3mj3")
+theme_override_font_sizes/font_size = 70
+placeholder_text = "    Cat weight"
+
+[node name="is_kitty" type="CheckBox" parent="__"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_fonts/font = ExtResource("6_f3mj3")
+theme_override_font_sizes/font_size = 50
+theme_override_icons/checked = ExtResource("7_qvuk5")
+theme_override_icons/checked_disabled = ExtResource("7_qvuk5")
+theme_override_icons/unchecked = ExtResource("8_wylli")
+theme_override_icons/unchecked_disabled = ExtResource("8_wylli")
+text = "   Is your cat kitty?"
+
+[node name="__" type="PanelContainer" parent="__"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xhwe6")
+
+[node name="ctr" type="CenterContainer" parent="__"]
+custom_minimum_size = Vector2(0, 900)
+layout_mode = 2
+
+[node name="__" type="TextureRect" parent="__/ctr"]
+custom_minimum_size = Vector2(700, 700)
+layout_mode = 2
+texture = ExtResource("3_cftvj")
+
+[node name="photo" type="TextureRect" parent="__/ctr"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+texture = ExtResource("4_gyliq")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="__"]
+layout_mode = 2
+theme_override_constants/separation = 300
+alignment = 1
+
+[node name="__2" type="TextureRect" parent="__/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = ExtResource("3_cftvj")
+
+[node name="preview" type="TextureRect" parent="__/HBoxContainer/__2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.093
+anchor_top = 0.093
+anchor_right = 0.927
+anchor_bottom = 0.927
+offset_left = 0.0999985
+offset_top = 0.0999985
+offset_right = -0.100006
+offset_bottom = -0.100006
+texture = ExtResource("3_cftvj")
+
+[node name="capture" type="Button" parent="__/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_uk1c0")
+text = "flash"
+
+[node name="___" type="PanelContainer" parent="__"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xhwe6")
+
+[node name="submit" type="Button" parent="__"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_uk1c0")
+text = "submit"
+
+[node name="Movable" type="Node" parent="."]
+script = ExtResource("2_5kd5g")
+
+[connection signal="text_changed" from="__/name" to="." method="_on_name_text_changed"]
+[connection signal="text_changed" from="__/weight" to="." method="_on_weight_text_changed"]
+[connection signal="pressed" from="__/is_kitty" to="." method="_on_is_kitty_pressed"]
+[connection signal="pressed" from="__/submit" to="." method="_on_submit_pressed"]

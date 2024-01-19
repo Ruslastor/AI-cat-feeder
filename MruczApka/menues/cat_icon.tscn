@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy42a2si71kp0"]
+
+[ext_resource type="Texture2D" uid="uid://sl5lawfg8tan" path="res://assets/otek_frame.png" id="1_fgwft"]
+[ext_resource type="Script" path="res://menues/cat_icon.gd" id="2_ku8ro"]
+[ext_resource type="Texture2D" uid="uid://d3dsg811gi5pd" path="res://huh2.jpg" id="3_kt2fo"]
+[ext_resource type="FontFile" uid="uid://c7ig0yeixifcr" path="res://fonts/Roboto-Black.ttf" id="4_b2qyq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pjgla"]
+texture = ExtResource("1_fgwft")
+
+[node name="CatIcon" type="PanelContainer"]
+custom_minimum_size = Vector2(429, 540)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pjgla")
+script = ExtResource("2_ku8ro")
+
+[node name="ref_point" type="Control" parent="."]
+layout_mode = 2
+
+[node name="icon" type="TextureButton" parent="ref_point"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058
+anchor_top = 0.05
+anchor_right = 0.944
+anchor_bottom = 0.754
+offset_left = 0.118
+offset_right = 0.0239868
+offset_bottom = -0.160004
+texture_normal = ExtResource("3_kt2fo")
+texture_pressed = ExtResource("3_kt2fo")
+texture_hover = ExtResource("3_kt2fo")
+texture_disabled = ExtResource("3_kt2fo")
+texture_focused = ExtResource("3_kt2fo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="name" type="Label" parent="ref_point"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.833
+anchor_right = 0.904
+anchor_bottom = 1.0
+offset_left = -0.0420036
+offset_top = 0.179962
+offset_right = 0.18399
+theme_override_colors/font_color = Color(0.360784, 0.360784, 0.360784, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b2qyq")
+theme_override_font_sizes/font_size = 50
+text = "asdasd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ref_point/icon" to="." method="_on_icon_pressed"]

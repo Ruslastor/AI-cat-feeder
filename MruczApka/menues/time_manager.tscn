@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn6ed4iym347o"]
+
+[ext_resource type="Script" path="res://objects/movable.gd" id="1_b0d4f"]
+[ext_resource type="Script" path="res://menues/time_manager.gd" id="1_vq56h"]
+
+[node name="TimeManager" type="PanelContainer"]
+anchors_preset = -1
+anchor_right = 0.21
+anchor_bottom = 0.082
+offset_right = 0.199997
+offset_bottom = 0.639999
+script = ExtResource("1_vq56h")
+
+[node name="_" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="_" type="VBoxContainer" parent="_"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="__" type="Label" parent="_/_"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Feeding times"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="_" type="ScrollContainer" parent="_/_"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="container" type="VBoxContainer" parent="_/_/_"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="__" type="VBoxContainer" parent="_"]
+layout_mode = 2
+alignment = 1
+
+[node name="add_new" type="Button" parent="_/__"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
+text = "Add new time"
+
+[node name="go_back" type="Button" parent="_/__"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 20
+text = "Add new time"
+
+[node name="Movable" type="Node" parent="."]
+script = ExtResource("1_b0d4f")
+
+[connection signal="pressed" from="_/__/add_new" to="." method="_on_add_new_pressed"]
+[connection signal="pressed" from="_/__/go_back" to="." method="_on_go_back_pressed"]

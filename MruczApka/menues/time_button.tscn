@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://omd5nqik8o2d"]
+
+[ext_resource type="Script" path="res://menues/time_button.gd" id="1_d5ddp"]
+[ext_resource type="Script" path="res://objects/movable.gd" id="1_rj7ku"]
+[ext_resource type="Theme" uid="uid://bhsf4m15q7ug3" path="res://design.theme" id="1_rqm6q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dtro2"]
+
+[node name="TimeButton" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 320)
+anchors_preset = -1
+anchor_right = 0.185
+anchor_bottom = 0.129
+offset_right = -159.8
+offset_bottom = -279.92
+theme = ExtResource("1_rqm6q")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dtro2")
+script = ExtResource("1_d5ddp")
+
+[node name="show" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+text = "Time"
+
+[node name="Movable" type="Node" parent="."]
+script = ExtResource("1_rj7ku")
+
+[connection signal="pressed" from="show" to="." method="_on_show_pressed"]

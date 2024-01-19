@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cljfv1pk5ckns"]
+
+[ext_resource type="Script" path="res://objects/statistics_column.gd" id="1_b75g8"]
+[ext_resource type="FontFile" uid="uid://c7ig0yeixifcr" path="res://fonts/Roboto-Black.ttf" id="2_jbih3"]
+
+[node name="StatisticsColumn" type="VBoxContainer"]
+custom_minimum_size = Vector2(130, 800)
+anchors_preset = -1
+anchor_right = 0.037
+anchor_bottom = 0.323
+offset_right = 0.0400009
+offset_bottom = -761.04
+script = ExtResource("1_b75g8")
+
+[node name="date" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.447059, 0.447059, 0.447059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jbih3")
+theme_override_font_sizes/font_size = 40
+text = "12-23"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="column" type="ColorRect" parent="."]
+layout_mode = 2
+
+[node name="weekday" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.447059, 0.447059, 0.447059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jbih3")
+theme_override_font_sizes/font_size = 40
+text = "Tue"
+horizontal_alignment = 1

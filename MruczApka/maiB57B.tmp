@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3 uid="uid://biq0pvmlu1rlj"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_doki6"]
+[ext_resource type="Texture2D" uid="uid://s6llicgn0a8e" path="res://assets/background.png" id="1_e0rn8"]
+[ext_resource type="PackedScene" uid="uid://csdnb716gft0j" path="res://menues/feed_camera.tscn" id="4_i2410"]
+[ext_resource type="PackedScene" uid="uid://dxajr723u3fvb" path="res://menues/cat_viewer.tscn" id="5_hufci"]
+[ext_resource type="PackedScene" uid="uid://chl24hn7stidx" path="res://menues/statistics.tscn" id="6_b8747"]
+[ext_resource type="PackedScene" uid="uid://bdyu2pftsied5" path="res://menues/cat_adder.tscn" id="7_rgbdi"]
+[ext_resource type="PackedScene" uid="uid://omd5nqik8o2d" path="res://menues/time_button.tscn" id="8_nnaob"]
+[ext_resource type="PackedScene" uid="uid://dn6ed4iym347o" path="res://menues/time_manager.tscn" id="9_xnltf"]
+[ext_resource type="Script" path="res://RaspberryTCP/ESP.gd" id="10_2vhka"]
+
+[sub_resource type="GDScript" id="GDScript_vwga4"]
+script/source = "class_name RaspberryTCP
+extends Node
+
+signal got_data(data : StringName)
+
+var server : TCPServer = TCPServer.new()
+var circuit : StreamPeerTCP
+
+func listen_to(port : int) -> void:
+	server.listen(port)
+
+func send(data : StringName) -> void:
+	if self.circuit:
+		self.circuit.put_data(data.to_utf8_buffer())
+		self.circuit.poll()
+
+func _process(_delta : float) -> void:
+	
+	if self.circuit:
+		if self.circuit.get_status() == 0:
+			self.circuit = null
+			return
+		var avb : int = self.circuit.get_available_bytes()
+		if avb > 0:
+			var data : PackedByteArray = self.circuit.get_data(avb)[1]
+			if data:
+				emit_signal('got_data', data.get_string_from_utf8())
+		self.circuit.poll()
+	else:
+		self.circuit = self.server.take_connection()
+"
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_doki6")
+
+[node name="Static" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Static"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e0rn8")
+
+[node name="RaspberryTCP" type="Node" parent="Static"]
+script = SubResource("GDScript_vwga4")
+
+[node name="FeedCamera" parent="." instance=ExtResource("4_i2410")]
+layout_mode = 1
+offset_top = 1535.12
+
+[node name="CatViewer" parent="." instance=ExtResource("5_hufci")]
+layout_mode = 1
+offset_bottom = 0.759949
+grow_horizontal = 1
+
+[node name="Statistics" parent="." instance=ExtResource("6_b8747")]
+layout_mode = 1
+anchor_top = 0.556
+anchor_bottom = 1.0
+offset_top = 1621.12
+offset_bottom = 1620.0
+grow_vertical = 2
+
+[node name="CatAdder" parent="." instance=ExtResource("7_rgbdi")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1500.0
+offset_right = 1500.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TimeButton" parent="." instance=ExtResource("8_nnaob")]
+layout_mode = 1
+anchor_left = 0.815
+anchor_top = 0.474
+anchor_right = 1.0
+anchor_bottom = 0.603
+offset_left = -0.199951
+offset_top = -355.52
+offset_right = 0.00012207
+offset_bottom = -355.44
+
+[node name="TimeManager" parent="." instance=ExtResource("9_xnltf")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1500.0
+offset_right = 1500.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RaspberryTCP" type="Node" parent="."]
+script = ExtResource("10_2vhka")
+
+[connection signal="add_new_cat" from="FeedCamera" to="." method="_on_feed_camera_add_new_cat"]
+[connection signal="close_cat_statistics" from="CatViewer" to="." method="_on_cat_viewer_close_cat_statistics"]
+[connection signal="show_cat_statistics" from="CatViewer" to="." method="_on_cat_viewer_show_cat_statistics"]
+[connection signal="new_cat_added" from="CatAdder" to="." method="_on_cat_adder_new_cat_added"]
+[connection signal="show_time_editor" from="TimeButton" to="." method="_on_time_button_show_time_editor"]
+[connection signal="close_time_manager" from="TimeManager" to="." method="_on_time_manager_close_time_manager"]
+[connection signal="got_data" from="RaspberryTCP" to="." method="_on_raspberry_tcp_got_data"]

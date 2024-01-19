@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxajr723u3fvb"]
+
+[ext_resource type="Script" path="res://objects/movable.gd" id="1_biiar"]
+[ext_resource type="Texture2D" uid="uid://q2ubs6oeafmf" path="res://assets/cat_scroller.png" id="1_vbl66"]
+[ext_resource type="Script" path="res://menues/cat_viewer.gd" id="2_whr45"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp1wn"]
+texture = ExtResource("1_vbl66")
+
+[node name="CatViewer" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 777)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.313
+offset_bottom = -776.24
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dp1wn")
+script = ExtResource("2_whr45")
+
+[node name="Movable" type="Node" parent="."]
+script = ExtResource("1_biiar")
+
+[node name="ref_point" type="Control" parent="."]
+layout_mode = 2
+
+[node name="_" type="ScrollContainer" parent="ref_point"]
+layout_mode = 2
+anchor_top = 0.188
+anchor_right = 1.0
+anchor_bottom = 0.931
+offset_top = -0.076004
+offset_bottom = -0.387024
+vertical_scroll_mode = 0
+
+[node name="cat_container" type="HBoxContainer" parent="ref_point/_"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1

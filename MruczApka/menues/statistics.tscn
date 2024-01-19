@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://chl24hn7stidx"]
+
+[ext_resource type="Script" path="res://menues/statistics.gd" id="1_oqiow"]
+[ext_resource type="PackedScene" uid="uid://cljfv1pk5ckns" path="res://objects/statistics_column.tscn" id="1_vqe8e"]
+[ext_resource type="FontFile" uid="uid://c7ig0yeixifcr" path="res://fonts/Roboto-Black.ttf" id="2_o5abq"]
+[ext_resource type="Script" path="res://objects/movable.gd" id="3_fnasv"]
+[ext_resource type="Theme" uid="uid://bhsf4m15q7ug3" path="res://design.theme" id="3_s6a0o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_je8g5"]
+
+[node name="Statistics" type="PanelContainer"]
+custom_minimum_size = Vector2(1080, 0)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.444
+offset_bottom = -545.12
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_je8g5")
+script = ExtResource("1_oqiow")
+
+[node name="avg_p" type="Line2D" parent="."]
+width = 5.0
+
+[node name="avg" type="Line2D" parent="."]
+width = 5.0
+
+[node name="avg_n" type="Line2D" parent="."]
+width = 5.0
+
+[node name="_" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="name" type="Label" parent="_"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.447059, 0.447059, 0.447059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o5abq")
+theme_override_font_sizes/font_size = 60
+text = "ASDSADA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="columns" type="HBoxContainer" parent="_"]
+layout_mode = 2
+alignment = 1
+
+[node name="Mon" parent="_/columns" instance=ExtResource("1_vqe8e")]
+layout_mode = 2
+wd = "Mon"
+
+[node name="Tue" parent="_/columns" instance=ExtResource("1_vqe8e")]
+layout_mode = 2
+wd = "Tue"
+
+[node name="Wed" parent="_/columns" instance=ExtResource("1_vqe8e")]
+layout_mode = 2
+wd = "Wed"
+
+[node name="Thu" parent="_/columns" instance=ExtResource("1_vqe8e")]
+layout_mode = 2
+wd = "Thu"
+
+[node name="Fri" parent="_/columns" instance=ExtResource("1_vqe8e")]
+layout_mode = 2
+wd = "Fri"
+
+[node name="Sat" parent="_/columns" instance=ExtResource("1_vqe8e")]
+layout_mode = 2
+wd = "Sat"
+
+[node name="Sun" parent="_/columns" instance=ExtResource("1_vqe8e")]
+layout_mode = 2
+wd = "Sun"
+
+[node name="buttons" type="HBoxContainer" parent="_"]
+layout_mode = 2
+
+[node name="back" type="Button" parent="_/buttons"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme = ExtResource("3_s6a0o")
+text = "<<"
+
+[node name="forw" type="Button" parent="_/buttons"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("3_s6a0o")
+text = ">>"
+
+[node name="underline" type="Line2D" parent="."]
+width = 6.0
+default_color = Color(0.168627, 0.835294, 0.729412, 1)
+
+[node name="Movable" type="Node" parent="."]
+script = ExtResource("3_fnasv")
+
+[connection signal="pressed" from="_/buttons/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="_/buttons/forw" to="." method="_on_forw_pressed"]

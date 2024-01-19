@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bffhgxdajcwfx"]
+
+[ext_resource type="Texture2D" uid="uid://ciwjqj0dpjrtp" path="res://assets/karm.png" id="1_yoykq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4x4dg"]
+radius = 55.4437
+
+[node name="Ball" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_yoykq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4x4dg")
