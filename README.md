@@ -53,3 +53,7 @@ The board consists of:</p>
   </tr>
 </table>
 
+<h2>Mechanical part</h2>
+<p>For this project, in the purpose of concentrating more on the circuit, it was decided to buy an existing automated cat feeder, and replace the insides with out own.</p>
+<p>The cat feeder we used:</p>
+<img src="images_ai_cat/feeder.jpg" alt="Feeder image" width=300/>
