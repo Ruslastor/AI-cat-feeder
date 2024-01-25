@@ -60,3 +60,6 @@ The board consists of:</p>
 <p>The feeding mechanism works in the way, that the motor rotates till the button is released and pressed again.</p>
 <p>The motor motion:</p>
 <img src="images_ai_cat/motion.gif" alt="Motor motion", width=300 />
+
+<h2>The AI part</h2>
+<p></p>
