@@ -15,9 +15,9 @@ The board consists of:</p>
 
 <table>
   <tr>
-    <th></th>
-    <th>The PCB:</th>
-    <th></tr>
+    <th>The PCB Gerber file</th>
+    <th>The PCB 2D view</th>
+    <th>The PCB 3D view</tr>
   </tr>
   <tr>
     <td><img src="images_ai_cat/gerber.png" width=300 alt="The gerber view"/></td>
