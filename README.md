@@ -4,6 +4,14 @@
 <h2>Electronics</h2>
 <p>The new electronics was designed as a shield for the Raspberry Pi Zero W 2.
 The board consists of:</p>
+<table>
+  <tr>
+    <th>Raspberry Pi Zero W 2</th>
+  </tr>
+  <tr>
+    <td><img src="images_ai_cat/RPI.jpg" width=400 alt="Prototype 1"/></td>
+  </tr>
+</table>
 <ul>
   <li>MCP3008 - 8 channel SPI ADC (Raspberry Pi Zero does not have its own)</li>
   <li>L293B - a DC motor controller (This is quite old-fashioned circuit, but we had only those in University, so, we have what we have :) )</li>
