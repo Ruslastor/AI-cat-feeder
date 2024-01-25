@@ -37,4 +37,11 @@ The board consists of:</p>
 
 <p>The PCB circuit has SMD and THD components. The components will be soldered using the reflow technique, but THD components will be soldered with the solderer. The power lines have bigger size (twice as big as signal lines). The big copper bottom-layer is circuit ground, and big copper layer on the top-layer is VCC. The vcc is taken from Raspberry's Vbus pin, as soon as is goes directly from USB feeding, without any influence.</p>
 
-<img src="" >
+<h2>The prototype circuit:</h2>
+<table>
+  <tr>
+    <th><img src="images_ai_cat/prototype_1.jpg" alt="Prototype 1"/></th>
+    <th><img src="images_ai_cat/prototype_2.jpg" alt="Prototype 2"/></th>
+  </tr>
+</table>
+
