@@ -40,8 +40,8 @@ The board consists of:</p>
 <h2>The prototype circuit:</h2>
 <table>
   <tr>
-    <th><img src="images_ai_cat/prototype_1.jpg" alt="Prototype 1"/></th>
-    <th><img src="images_ai_cat/prototype_2.jpg" alt="Prototype 2"/></th>
+    <th><img src="images_ai_cat/prototype_1.jpg" width=400 alt="Prototype 1"/></th>
+    <th><img src="images_ai_cat/prototype_2.jpg" width=400 alt="Prototype 2"/></th>
   </tr>
 </table>
 
