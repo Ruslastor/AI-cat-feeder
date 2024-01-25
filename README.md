@@ -54,7 +54,8 @@ The board consists of:</p>
 </table>
 
 <h2>Mechanical part</h2>
-<p>For this project, in the purpose of concentrating more on the circuit, it was decided to buy an existing automated cat feeder, and replace the insides with out own.</p>
+<p>For this project, in the purpose of concentrating more on the circuit, it was decided to buy an existing automated cat feeder and replace the insides with our own.</p>
 <p>The cat feeder we used:</p>
 <img src="images_ai_cat/feeder.png" alt="Feeder image" width=300/>
 <p>The feeding mechanism works in the way, that the motor rotates till the button is released and pressed again.</p>
+
