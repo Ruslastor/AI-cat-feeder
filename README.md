@@ -62,4 +62,4 @@ The board consists of:</p>
 <img src="images_ai_cat/motion.gif" alt="Motor motion", width=300 />
 
 <h2>The AI part</h2>
-<p></p>
+<p>The AI part was realized with a python library for machine learning, called <b>TensorFlow</b>,</p>
