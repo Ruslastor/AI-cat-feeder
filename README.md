@@ -71,7 +71,10 @@ The board consists of:</p>
 <p>To capture a cat image, the Raspberry Camera module was used:</p>
 <table>
   <tr>
-    <th><img src="images_ai_cat/motion.gif" alt="Motor motion", width=300 /></th>
+    <th>Raspberry Pi Camera Module V2</th>
+  </tr>
+  <tr>
+    <td><img src="images_ai_cat/camera.jpg" alt="Camera Image", width=300 /></td>
   </tr>
 </table>
 <img src="images_ai_cat/cat_detector.png" alt="AI working" width=300/>
