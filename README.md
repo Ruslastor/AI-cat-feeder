@@ -77,5 +77,9 @@ The board consists of:</p>
     <td><img src="images_ai_cat/camera.jpg" alt="Camera Image", width=300 /></td>
   </tr>
 </table>
+
+<p>Camera working:</p>
+<img src="images_ai_cat/camera.gif" alt="Camera working" width=300/>
+<p>AI processed image:</p>
 <img src="images_ai_cat/cat_detector.png" alt="AI working" width=300/>
 
