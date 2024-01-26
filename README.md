@@ -62,4 +62,11 @@ The board consists of:</p>
 <img src="images_ai_cat/motion.gif" alt="Motor motion", width=300 />
 
 <h2>The AI part and programming.</h2>
-<p>The AI part was realized with a python library for machine learning, called <b>TensorFlow</b>, mostly its module, called Keras. For model training we used open-source cat image database with points, corresponding to cat face metrics (<a href="https://www.kaggle.com/datasets/spandan2/cats-faces-64x64-for-generative-models">Link</a>).</p>
+<p>The AI part was realized with a python library for machine learning, called <b>TensorFlow</b>, mostly its module, called Keras. For model training we used open-source <a href="https://www.kaggle.com/datasets/spandan2/cats-faces-64x64-for-generative-models">cat image database</a> with points, corresponding to cat face metrics. Then, 3 files for image processing were written.</p>
+<ul>
+  <li>The first one is <b>filtrator.py</b>, which creates a folder and resizes all images to the desired size (for now it is decided to take 128x128 pixels), and also converts it to L8 grayscale image, and rescales the points in each ".cat" file, to match the new image sizes. Such a changes helps to reduce the data input stream.</li>
+  <li>Then, the <b>network.py</b> file implements te AI model, which uses the created images to train itself. The model then is being saved as '.h5' file.</li>
+  <li>The <b>test.py</b> is used to obtain the metric points, by parsing a cat image.</li>
+</ul>
+<img src="images_ai_cat/cat_detector.png" alt="AI working" width=300/>
+<p>To capture an image from the </p>
