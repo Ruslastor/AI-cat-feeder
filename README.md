@@ -68,5 +68,11 @@ The board consists of:</p>
   <li>Then, the <b>network.py</b> file implements te AI model, which uses the created images to train itself. The model then is being saved as '.h5' file.</li>
   <li>The <b>test.py</b> is used to obtain the metric points, by parsing a cat image.</li>
 </ul>
+<p>To capture a cat image, the Raspberry Camera module was used:</p>
+<table>
+  <tr>
+    <th><img src="images_ai_cat/motion.gif" alt="Motor motion", width=300 /></th>
+  </tr>
+</table>
 <img src="images_ai_cat/cat_detector.png" alt="AI working" width=300/>
-<p>To capture an image from the </p>
+
