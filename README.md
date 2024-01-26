@@ -62,4 +62,4 @@ The board consists of:</p>
 <img src="images_ai_cat/motion.gif" alt="Motor motion", width=300 />
 
 <h2>The AI part and programming.</h2>
-<p>The AI part was realized with a python library for machine learning, called <b>TensorFlow</b>, mostly its module, called Keras. For model training we used open-source cat image database with points, corresponding to cat geometry.</p>
+<p>The AI part was realized with a python library for machine learning, called <b>TensorFlow</b>, mostly its module, called Keras. For model training we used open-source cat image database with points, corresponding to cat face metrics (<a href="https://www.kaggle.com/datasets/spandan2/cats-faces-64x64-for-generative-models">Link</a>).</p>
